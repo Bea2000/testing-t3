@@ -13,4 +13,6 @@ class Review < ApplicationRecord
                            numericality: { only_integer: true, greater_than_or_equal_to: 1, less_than_or_equal_to: 5 }
 
   # Valida que la asociación con el producto (product) esté presente.
+  validates :product, presence: true
+
 end

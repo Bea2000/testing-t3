@@ -17,6 +17,7 @@ class Product < ApplicationRecord
   validates :precio, presence: true, numericality: { greater_than_or_equal_to: 0 }
 
   # Valida que el campo user_id no esté vacío.
+  validates :user_id, presence: true
 
   # Contiene una imagen como attachment.
   has_one_attached :image
