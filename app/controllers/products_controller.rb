@@ -60,7 +60,7 @@ class ProductsController < ApplicationController
   def insert_deseado
     # Desactiva temporalmente las validaciones de contraseña
 
-    if current_user.deseados.nil?
+    if current_user.deseados.empty?
       current_user.deseados = [params[:product_id].to_s]
     else
       current_user.deseados << params[:product_id].to_s
