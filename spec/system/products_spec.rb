@@ -132,5 +132,6 @@ RSpec.describe 'Products', type: :system do
       click_button 'Guardar'
       expect(page).to have_selector('div', text: 'Hubo un error al guardar el producto')
     end
+
   end
 end
