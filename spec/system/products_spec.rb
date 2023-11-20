@@ -133,5 +133,53 @@ RSpec.describe 'Products', type: :system do
       expect(page).to have_selector('div', text: 'Hubo un error al guardar el producto')
     end
 
+    it 'throws an error when creating a product without name' do
+      visit '/products/crear'
+      fill_in 'product[precio]', with: '4000'
+      fill_in 'product[stock]', with: '1'
+      select 'Cancha', from: 'product[categories]'
+      click_button 'Guardar'
+      expect(page).to have_selector('div', text: 'Hubo un error al guardar el producto')
+    end
+
+    it 'throws an error when creating a product without price' do
+      visit '/products/crear'
+      fill_in 'product[nombre]', with: 'producto'
+      fill_in 'product[stock]', with: '1'
+      select 'Cancha', from: 'product[categories]'
+      click_button 'Guardar'
+      expect(page).to have_selector('div', text: 'Hubo un error al guardar el producto')
+    end
+
+    it 'throws an error when creating a product without stock' do
+      visit '/products/crear'
+      fill_in 'product[nombre]', with: 'producto'
+      fill_in 'product[precio]', with: '4000'
+      select 'Cancha', from: 'product[categories]'
+      click_button 'Guardar'
+      expect(page).to have_selector('div', text: 'Hubo un error al guardar el producto')
+    end
+
+    it 'throws an error when creating a product with negative stock' do
+      visit '/products/crear'
+      fill_in 'product[nombre]', with: 'producto'
+      fill_in 'product[precio]', with: '4000'
+      fill_in 'product[stock]', with: '-1'
+      select 'Cancha', from: 'product[categories]'
+      click_button 'Guardar'
+      expect(page).to have_selector('div', text: 'Hubo un error al guardar el producto')
+    end
+
+    it 'throws an error when creating a product with negative price' do
+      visit '/products/crear'
+      fill_in 'product[nombre]', with: 'producto'
+      fill_in 'product[precio]', with: '-4000'
+      fill_in 'product[stock]', with: '1'
+      select 'Cancha', from: 'product[categories]'
+      click_button 'Guardar'
+      expect(page).to have_selector('div', text: 'Hubo un error al guardar el producto')
+    end
   end
+
+
 end
