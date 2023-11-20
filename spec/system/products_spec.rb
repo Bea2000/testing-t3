@@ -10,6 +10,7 @@ RSpec.describe 'Products', type: :system do
     @product2 = Product.create!(nombre: 'futbol', precio: 4000, stock: 1, user_id: @owner.id, categories: 'Suplementos')
     @review = Review.create!(tittle: 'titulo', description: 'descripcion', calification: 5, product_id: @product.id, user_id: @user.id)
   end
+  
   describe 'visiting the product form' do
     it 'have form' do
       visit '/products/crear'
