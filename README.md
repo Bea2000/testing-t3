@@ -1,8 +1,7 @@
-## Tarea X
+## Tarea 4
 
 ### Logros de la entrega:
-[Recuerden especificar quien hizo cada cosa]
-* Trabajamos a la par con Gustavo realizando los tests unitarios y alcanzamos a hacer algunos tests de integración.
+* El trabajo se realizó en conjunto y de forma colaborativa entre Beatriz y Gustavo.
 
-### Informacion para el correcto:
-Incluir aqui cualquier detalle que pueda ser importante al momento de corregir.
+### Información para el corrector
+* La herramienta de testing utilizada fue Capybara.
